@@ -2,6 +2,7 @@ package com.example.Planner_team4;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,12 +15,15 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView theDate;
     private Button btnGoCalendar;
+    private Button btnAddTasks;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         theDate = (TextView) findViewById(R.id.date);
         btnGoCalendar = (Button) findViewById(R.id.btnGoCalendar);
+        btnAddTasks = (Button) findViewById(R.id.btnAddTasks);
 
         Intent incomingIntent = getIntent();
         String date = incomingIntent.getStringExtra("date");
@@ -31,6 +35,14 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
                 startActivity(intent);
             }
+        });
+
+        btnAddTasks.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, TasksActivity.class);
+                    startActivity(intent);
+                }
         });
     }
 }

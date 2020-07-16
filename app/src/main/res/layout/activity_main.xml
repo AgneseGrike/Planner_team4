@@ -11,15 +11,30 @@
     tools:context="MainActivity">
 
     <Button
+        android:id="@+id/btnGoCalendar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnGoCalendar"
-        android:text="Go to calendar"/>
+        android:layout_marginTop="180dp"
+        android:text="Go to calendar" />
+
+    <Button
+        android:id="@+id/btnAddTasks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Go to list of tasks" />
+
+    <Button
+        android:id="@+id/btnWeather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:text="View weather"/>
 
     <TextView
         android:layout_centerHorizontal="true"
         android:textSize="25sp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="-200dp"
         android:layout_below="@+id/btnGoCalendar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
