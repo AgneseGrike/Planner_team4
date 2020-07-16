@@ -16,6 +16,7 @@
         android:layout_height="wrap_content">
         <EditText
             android:id="@+id/id_edit_text"
+            android:hint="Type a task"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
