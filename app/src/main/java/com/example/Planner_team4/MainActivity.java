@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView theDate;
     private Button btnGoCalendar;
     private Button btnAddTasks;
+    private Button btnViewWeather;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         theDate = (TextView) findViewById(R.id.date);
         btnGoCalendar = (Button) findViewById(R.id.btnGoCalendar);
         btnAddTasks = (Button) findViewById(R.id.btnAddTasks);
+        btnViewWeather = (Button) findViewById(R.id.btnViewWeather);
 
         Intent incomingIntent = getIntent();
         String date = incomingIntent.getStringExtra("date");
@@ -43,6 +45,14 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(MainActivity.this, TasksActivity.class);
                     startActivity(intent);
                 }
+        });
+
+        btnViewWeather.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, WeatherActivity.class);
+                startActivity(intent);
+            }
         });
     }
 }

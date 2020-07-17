@@ -8,10 +8,10 @@
     android:gravity="center">
 
     <TextView
-        android:hint="Tap the completed task to cross it out"
+        android:hint="Press and hold to delete the task"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:translationY="80dp"
+        android:translationY="60dp"
         android:layout_margin="5dp"
         android:textSize="12sp" />
 

@@ -25,7 +25,7 @@
         android:text="Go to list of tasks" />
 
     <Button
-        android:id="@+id/btnWeather"
+        android:id="@+id/btnViewWeather"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="260dp"

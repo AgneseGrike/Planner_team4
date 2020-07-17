@@ -7,6 +7,7 @@
     tools:context=".TasksActivity">
 
     <include layout="@layout/footer_tasks"/>
+    <include layout="@layout/header_tasks"/>
 
     <LinearLayout
         android:id="@+id/id_bottom_section"
