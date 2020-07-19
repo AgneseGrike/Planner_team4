@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         btnViewWeather.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, WeatherActivity.class);
+                Intent intent = new Intent(MainActivity.this, WeatherActivity1.class);
                 startActivity(intent);
             }
         });
