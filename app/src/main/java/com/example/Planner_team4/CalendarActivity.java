@@ -27,7 +27,7 @@ public class CalendarActivity extends AppCompatActivity {
         setContentView(R.layout.calendar_layout);
         mCalendarView = (CalendarView) findViewById(R.id.calendarView);
 
-        mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+        /*mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
                 String date = dayOfMonth + "/" + (month + 1) + "/" + year;
@@ -37,6 +37,6 @@ public class CalendarActivity extends AppCompatActivity {
                 intent.putExtra("date", date);
                 startActivity(intent);
             }
-        });
+        });*/
     }
 }

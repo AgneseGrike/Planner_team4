@@ -1,7 +1,6 @@
 package com.example.Planner_team4;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -18,7 +17,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class WeatherActivity1 extends AppCompatActivity {
+public class WeatherActivity extends AppCompatActivity {
 
     ImageView search;
     TextView tempText, descText, humidityText;
@@ -27,7 +26,7 @@ public class WeatherActivity1 extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.weather1_layout);
+        setContentView(R.layout.weather_layout);
 
         search = findViewById(R.id.search);
         tempText = findViewById(R.id.tempText);

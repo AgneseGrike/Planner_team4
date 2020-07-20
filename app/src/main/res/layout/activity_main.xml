@@ -33,12 +33,12 @@
 
     <TextView
         android:layout_centerHorizontal="true"
+        android:text="Date"
         android:textSize="25sp"
         android:layout_marginTop="-200dp"
         android:layout_below="@+id/btnGoCalendar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Date"
-        android:id="@+id/date"/>
+        android:id="@+id/text_view_date"/>
 
 </RelativeLayout>
