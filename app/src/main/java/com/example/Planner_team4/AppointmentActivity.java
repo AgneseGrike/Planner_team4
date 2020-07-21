@@ -42,15 +42,16 @@ public class AppointmentActivity extends AppCompatActivity{
     }
 
     public void validateAppointment(View view) {
-        if (appointmentList!=null)
+        setContentView(R.layout.view_appointment);
+        /*if (appointmentList!=null)
         {
             //validates fields
-            setContentView(R.layout.view_appointment);
+
         }
         else
         {
             // throws some errors
-        }
+        }*/
     }
 
 }
