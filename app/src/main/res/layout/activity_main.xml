@@ -1,32 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:id="@+id/drawer">
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tools:context="MainActivity">
 
-    <include
+    <Button
+        android:id="@+id/btnGoCalendar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        layout="@layout/drawer_toolbar"/>
+        android:layout_marginTop="180dp"
+        android:text="Go to calendar" />
 
-    <include
-        android:layout_marginTop="?attr/actionBarSize"
+    <Button
+        android:id="@+id/btnAddTasks"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        layout="@layout/content_main"/>
+        android:layout_marginTop="100dp"
+        android:text="Go to list of tasks" />
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigation_view"
+    <Button
+        android:id="@+id/btnViewWeather"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:menu="@menu/drawer_menu"
-        app:headerLayout="@layout/drawer_header"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true">
-    </com.google.android.material.navigation.NavigationView>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:text="View weather" />
 
-</androidx.drawerlayout.widget.DrawerLayout>
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:text="Date"
+        android:textSize="25sp"
+        android:layout_marginTop="-200dp"
+        android:layout_below="@+id/btnGoCalendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_view_date"/>
+
+</RelativeLayout>
