@@ -18,4 +18,10 @@
         android:icon="@drawable/ic_weather"
         android:title="View weather">
     </item>
+
+    <item
+        android:id="@+id/nav_appointment"
+        android:icon="@drawable/ic_clock"
+        android:title="Appointments">
+    </item>
 </menu>
