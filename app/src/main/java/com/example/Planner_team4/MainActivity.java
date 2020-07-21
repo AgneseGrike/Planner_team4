@@ -1,5 +1,7 @@
 package com.example.Planner_team4;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -11,6 +13,7 @@ import androidx.navigation.ui.NavigationUI;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -22,23 +25,21 @@ import com.google.android.material.snackbar.Snackbar;
 import java.text.DateFormat;
 import java.util.Calendar;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final String TAG = "MainActivity";
 
     private TextView theDate;
-    private Button btnGoCalendar;
-    private Button btnAddTasks;
-    private Button btnViewWeather;
+
+    Toolbar toolbar;
+    DrawerLayout drawer;
+    ActionBarDrawerToggle toggle;
+    NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        /*theDate = (TextView) findViewById(R.id.date);*/
-        btnGoCalendar = (Button) findViewById(R.id.btnGoCalendar);
-        btnAddTasks = (Button) findViewById(R.id.btnAddTasks);
-        btnViewWeather = (Button) findViewById(R.id.btnViewWeather);
 
         Intent incomingIntent = getIntent();
         /*String date = incomingIntent.getStringExtra("date");
@@ -49,28 +50,36 @@ public class MainActivity extends AppCompatActivity {
         theDate = findViewById(R.id.text_view_date);
         theDate.setText(currentDate);
 
-        btnGoCalendar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        toolbar = findViewById(R.id.toolbar);
+        /*setSupportActionBar(toolbar);*/
+
+        navigationView = findViewById(R.id.navigation_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        drawer = findViewById(R.id.drawer);
+        toggle = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.open,R.string.close);
+        drawer.addDrawerListener(toggle);
+        toggle.setDrawerIndicatorEnabled(true);
+        toggle.syncState();
+
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.nav_calendar) {
                 Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
                 startActivity(intent);
-            }
-        });
+        }
 
-        btnAddTasks.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(MainActivity.this, TasksActivity.class);
-                    startActivity(intent);
-                }
-        });
+        if(item.getItemId() == R.id.nav_tasks) {
+            Intent intent = new Intent(MainActivity.this, TasksActivity.class);
+            startActivity(intent);
+        }
 
-        btnViewWeather.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, WeatherActivity.class);
-                startActivity(intent);
-            }
-        });
+        if(item.getItemId() == R.id.nav_weather) {
+            Intent intent = new Intent(MainActivity.this, WeatherActivity.class);
+            startActivity(intent);
+        }
+        return true;
     }
 }
