@@ -127,6 +127,11 @@ public class MainActivityMaster extends AppCompatActivity implements NavigationV
             Intent intent = new Intent(MainActivityMaster.this, WeatherActivity.class);
             startActivity(intent);
         }
+
+        if(item.getItemId() == R.id.nav_appointment) {
+            Intent intent = new Intent(MainActivityMaster.this, AppointmentActivity.class);
+            startActivity(intent);
+        }
         return true;
     }
 
