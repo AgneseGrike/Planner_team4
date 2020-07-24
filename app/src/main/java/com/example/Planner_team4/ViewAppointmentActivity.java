@@ -37,7 +37,6 @@ public class ViewAppointmentActivity extends AppCompatActivity {
         String notes = appointment.notes;
 
         appointmentText = title + "\n";
-
         if (startDate.equals(endDate)) {
             appointmentText = appointmentText + startDate + "\n";
         }
@@ -50,7 +49,7 @@ public class ViewAppointmentActivity extends AppCompatActivity {
         else
             appointmentText = appointmentText + startTime + "-" + endTime + "\n";
 
-        if (notes != "") {
+        if (!notes.equals("")) {
             appointmentText = appointmentText + "Notes: " + notes;
         }
 
@@ -61,7 +60,7 @@ public class ViewAppointmentActivity extends AppCompatActivity {
         btnCloseView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ViewAppointmentActivity.this, CalendarActivity.class);
+                Intent intent = new Intent(ViewAppointmentActivity.this, ViewAppointmentList.class);
                 startActivity(intent);
             }
         });

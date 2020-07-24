@@ -1,5 +1,7 @@
 package com.example.Planner_team4;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 
 class AppointmentList {
@@ -22,7 +24,7 @@ class AppointmentList {
         return this.appointmentList;
     }
 
-    public void setList(ArrayList<Appointment> appointmentList) {
-        this.appointmentList = appointmentList;
+    public Appointment getAppointment(int item) {
+        return this.appointmentList.get(item);
     }
 }
