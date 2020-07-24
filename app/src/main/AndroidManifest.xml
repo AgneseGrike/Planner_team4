@@ -13,10 +13,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name="com.example.Planner_team4.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivityMaster">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"
+                    android:theme="@style/AppTheme.NoActionBar"/>
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
